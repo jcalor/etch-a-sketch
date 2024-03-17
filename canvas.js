@@ -21,13 +21,10 @@ window.addEventListener("mousedown", function (event) {
 window.addEventListener("mousemove", function (event) {
   if (mouseDown) {
     let rect = canvas.getBoundingClientRect();
-    console.log(rect)
     mouse.x = event.clientX - rect.left;
     mouse.y = event.clientY - rect.top;
-    c.fillStyle = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${
-      Math.random() * 255
-    }, 1)`;
-    c.fillRect(mouse.x, mouse.y, 5, 5);
+    c.fillStyle = "black";
+    c.fillRect(mouse.x, mouse.y, squareSize, squareSize);
   }
 });
 
@@ -39,9 +36,10 @@ window.addEventListener("mouseup", function (event) {
 
 window.addEventListener("click", (event) => {
   if (event.button === 0) {
-    mouse.x = event.x;
-    mouse.y = event.y;
-    c.fillStyle = "rgba(255, 0, 0, 0.5)";
+    let rect = canvas.getBoundingClientRect();
+    mouse.x = event.x - rect.left;
+    mouse.y = event.y - rect.top;
+    c.fillStyle = "black";
     c.fillRect(mouse.x, mouse.y, 5, 5);
   }
 });
