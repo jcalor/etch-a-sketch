@@ -49,12 +49,12 @@ document.getElementById("clear").addEventListener("click", () => {
   c.clearRect(0, 0, canvas.width, canvas.height);
 })
 
-document.getElementById("size").addEventListener("click", (event) => {
+document.getElementById("size").addEventListener("click", () => {
   let size = prompt("Enter size of squares:", 5)
   squareSize = size
 })
 
-document.getElementById("resetSize").addEventListener("click", (event) => {
+document.getElementById("resetSize").addEventListener("click", () => {
   squareSize = 5
 })
 
