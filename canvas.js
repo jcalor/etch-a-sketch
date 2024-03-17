@@ -11,6 +11,7 @@ let mouse = {
 };
 
 let mouseDown = false;
+let squareSize = 5;
 
 window.addEventListener("mousedown", function (event) {
   if (event.button === 0) {
@@ -43,6 +44,19 @@ window.addEventListener("click", (event) => {
     c.fillRect(mouse.x, mouse.y, 5, 5);
   }
 });
+
+document.getElementById("clear").addEventListener("click", () => {
+  c.clearRect(0, 0, canvas.width, canvas.height);
+})
+
+document.getElementById("size").addEventListener("click", (event) => {
+  let size = prompt("Enter size of squares:", 5)
+  squareSize = size
+})
+
+document.getElementById("resetSize").addEventListener("click", (event) => {
+  squareSize = 5
+})
 
 // Rectangulo
 
